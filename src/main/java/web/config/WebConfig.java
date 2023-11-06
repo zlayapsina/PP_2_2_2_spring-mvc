@@ -1,9 +1,9 @@
 package web.config;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -16,9 +16,9 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 @ComponentScan("web")
 public class WebConfig implements WebMvcConfigurer {
 
-    private final ApplicationContext applicationContext;
+    private final AnnotationConfigWebApplicationContext applicationContext;
 
-    public WebConfig(ApplicationContext applicationContext) {
+    public WebConfig(AnnotationConfigWebApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
 
